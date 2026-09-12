@@ -4,8 +4,10 @@ public class PedidoEncomienda extends Pedido {
 
     private double pesoKg;
 
-    public PedidoEncomienda(int idPedido, String direccionEntrega,
-                            double distanciaKm, double pesoKg) {
+    public PedidoEncomienda(int idPedido,
+                            String direccionEntrega,
+                            double distanciaKm,
+                            double pesoKg) {
 
         super(idPedido, direccionEntrega, distanciaKm);
         this.pesoKg = pesoKg;
@@ -21,24 +23,41 @@ public class PedidoEncomienda extends Pedido {
 
     @Override
     public int calcularTiempoEntrega() {
-        return (int) Math.round(20 + (1.5 * getDistanciaKm()));
+
+        return (int) Math.round(
+                20 + (1.5 * getDistanciaKm())
+        );
     }
 
     @Override
-    public void mostrarResumen() {
-        System.out.println("PedidoEncomienda #" +
-                String.format("%03d", getIdPedido()));
+    public void asignarRepartidor() {
 
-        System.out.println("Dirección: " +
-                getDireccionEntrega());
+        System.out.println(
+                "[Pedido Encomienda]"
+        );
 
-        System.out.println("Distancia: " +
-                getDistanciaKm() + " km");
+        System.out.println(
+                "Asignando repartidor..."
+        );
 
-        System.out.println("Peso: " +
-                pesoKg + " kg");
+        System.out.println(
+                "→ Validando peso y embalaje... OK"
+        );
+    }
 
-        System.out.println("Tiempo estimado de entrega: " +
-                calcularTiempoEntrega() + " minutos");
+    @Override
+    public void asignarRepartidor(String nombre) {
+
+        System.out.println(
+                "[Pedido Encomienda]"
+        );
+
+        System.out.println(
+                "→ Peso y embalaje validados... OK"
+        );
+
+        System.out.println(
+                "→ Pedido asignado a " + nombre
+        );
     }
 }

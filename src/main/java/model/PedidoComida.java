@@ -4,8 +4,10 @@ public class PedidoComida extends Pedido {
 
     private String restaurante;
 
-    public PedidoComida(int idPedido, String direccionEntrega,
-                        double distanciaKm, String restaurante) {
+    public PedidoComida(int idPedido,
+                        String direccionEntrega,
+                        double distanciaKm,
+                        String restaurante) {
 
         super(idPedido, direccionEntrega, distanciaKm);
         this.restaurante = restaurante;
@@ -21,22 +23,45 @@ public class PedidoComida extends Pedido {
 
     @Override
     public int calcularTiempoEntrega() {
-        return (int) Math.round(15 + (2 * getDistanciaKm()));
+
+        return (int) Math.round(
+                15 + (2 * getDistanciaKm())
+        );
     }
 
     @Override
-    public void mostrarResumen() {
-        System.out.println("PedidoComida #" +
-                String.format("%03d", getIdPedido()));
+    public void asignarRepartidor() {
 
-        System.out.println("Dirección: " + getDireccionEntrega());
+        System.out.println(
+                "[Pedido Comida]"
+        );
 
-        System.out.println("Distancia: " +
-                getDistanciaKm() + " km");
+        System.out.println(
+                "Asignando repartidor..."
+        );
 
-        System.out.println("Restaurante: " + restaurante);
+        System.out.println(
+                "→ Verificando mochila térmica... OK"
+        );
 
-        System.out.println("Tiempo estimado de entrega: " +
-                calcularTiempoEntrega() + " minutos");
+        System.out.println(
+                "→ Repartidor disponible para comida."
+        );
+    }
+
+    @Override
+    public void asignarRepartidor(String nombre) {
+
+        System.out.println(
+                "[Pedido Comida]"
+        );
+
+        System.out.println(
+                "→ Mochila térmica verificada... OK"
+        );
+
+        System.out.println(
+                "→ Pedido asignado a " + nombre
+        );
     }
 }

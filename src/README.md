@@ -1,67 +1,58 @@
-# SpeedFast
+# 🚚 SpeedFast - Sistema de Gestión de Entregas
 
-## Descripción
+## 📋 Descripción del proyecto
 
-Sistema desarrollado en Java para representar los diferentes tipos
-de pedidos de la empresa de reparto SpeedFast.
+SpeedFast es una aplicación desarrollada en Java que simula un sistema de gestión y entrega de pedidos.
 
-## Tipos de pedidos
+El sistema permite trabajar con diferentes tipos de pedidos mediante Programación Orientada a Objetos y, además, incorpora programación concurrente para simular el trabajo simultáneo de varios repartidores.
 
-- Pedido de comida
-- Pedido de encomienda
-- Pedido express
+Durante la ejecución, los repartidores comparten una zona de carga desde la cual retiran pedidos y realizan las entregas de forma concurrente.
 
-## Conceptos de POO utilizados
+---
 
-- Encapsulamiento
-- Herencia
-- Sobrescritura
-- Sobrecarga
-- Polimorfismo
+## 🎯 Objetivos
 
-## Estructura
+El proyecto permite aplicar los siguientes conceptos:
 
-- model.Pedido
-- model.PedidoComida
-- model.PedidoEncomienda
-- model.PedidoExpress
-- ui.Main
+- Programación Orientada a Objetos.
+- Abstracción.
+- Herencia.
+- Encapsulación.
+- Polimorfismo.
+- Sobrecarga de métodos.
+- Sobrescritura de métodos.
+- Interfaces.
+- Enumeraciones (`enum`).
+- Programación concurrente.
+- Implementación de `Runnable`.
+- Uso de `ExecutorService`.
+- Sincronización mediante `synchronized`.
 
-## Ejecución
+---
 
-El programa se ejecuta desde la clase Main.
+## 🏗️ Estructura del proyecto
 
-
-## Semana 2 - Clase Abstracta
-
-En esta semana se implementó una clase abstracta Pedido
-para representar las características comunes de los pedidos
-de SpeedFast.
-
-### Conceptos aplicados
-
-- Clases abstractas
-- Herencia
-- Métodos abstractos
-- Sobrescritura
-- Polimorfismo
-- Encapsulamiento
-
-### Clases
-
-- Pedido
-- PedidoComida
-- PedidoEncomienda
-- PedidoExpress
-- Main
-
-### Cálculo de tiempos
-
-PedidoComida:
-15 minutos + 2 minutos por kilómetro.
-
-PedidoEncomienda:
-20 minutos + 1.5 minutos por kilómetro.
-
-PedidoExpress:
-10 minutos base + 5 minutos si la distancia supera los 5 km.
+```text
+src
+└── main
+    ├── java
+    │   ├── Concurrente
+    │   │   ├── Repartidor.java
+    │   │   └── ZonaDeCarga.java
+    │   │
+    │   ├── interfaces
+    │   │   ├── Cancelable.java
+    │   │   ├── Despachable.java
+    │   │   └── Rastreable.java
+    │   │
+    │   ├── model
+    │   │   ├── EstadoPedido.java
+    │   │   ├── Pedido.java
+    │   │   ├── PedidoComida.java
+    │   │   ├── PedidoEncomienda.java
+    │   │   └── PedidoExpress.java
+    │   │
+    │   └── ui
+    │       └── Main.java
+    │
+    └── resources

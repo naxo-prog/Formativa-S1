@@ -1,4 +1,6 @@
 package interfaces;
 
-public class Rastreable {
+public interface Rastreable {
+
+    void verHistorial();
 }

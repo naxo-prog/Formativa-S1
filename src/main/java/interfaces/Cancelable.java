@@ -1,4 +1,6 @@
 package interfaces;
 
-public class Cancelable {
+public interface Cancelable {
+
+    void cancelar();
 }
